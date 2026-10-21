@@ -1,4 +1,4 @@
-// 1. Dados em MemÃ³ria
+// 1. Dados em Memória
 const clientes = [
     { cpf: "111.222.333-44", senha: "123", nome: "Dennis Lopes", saldo: 5000 },
     { cpf: "222.333.444-55", senha: "123", nome: "Nicolas Silva", saldo: 1500 },
@@ -9,7 +9,7 @@ const clientes = [
 
 let usuarioLogado = null;
 
-// 2. SeleÃ§Ã£o de Elementos (DOM)
+// 2. Seleção de Elementos (DOM)
 const secaoLogin = document.querySelector('#login-section');
 const secaoCadastro = document.querySelector('#cadastro-section');
 const secaoSucesso = document.querySelector('#sucesso-section');
@@ -19,7 +19,7 @@ const campoSaldo = document.querySelector('#saldo-valor');
 const boasVindas = document.querySelector('#boas-vindas');
 const loginErro = document.querySelector('#login-erro');
 
-// 3. AlternÃ¢ncia entre Telas (Login <-> Cadastro)
+// 3. Alternância entre Telas (Login <-> Cadastro)
 document.querySelector('#link-ir-cadastro').addEventListener('click', (e) => {
     e.preventDefault();
     secaoLogin.style.display = 'none';
@@ -46,28 +46,28 @@ document.querySelector('#btn-login').addEventListener('click', () => {
         secaoPainel.style.display = 'block';
 
         campoSaldo.textContent = `R$ ${usuarioLogado.saldo.toFixed(2)}`;
-        boasVindas.textContent = `OlÃ¡, ${usuarioLogado.nome}`;
+        boasVindas.textContent = `Olá, ${usuarioLogado.nome}`;
     } else {
         loginErro.style.display = 'block';
     }
 });
 
-// 5. LÃ³gica de SubmissÃ£o de Cadastro (Onde aplicaremos as RegEx)
+// 5. Lógica de Submissão de Cadastro (Onde aplicaremos as RegEx)
 document.querySelector('#form-cadastro').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // TODO: Os alunos vÃ£o validar os campos com RegEx e conferir se as senhas coincidem.
-    // ApÃ³s a validaÃ§Ã£o com sucesso, transita para a tela de anÃ¡lise:
+    // TODO: Os alunos vão validar os campos com RegEx e conferir se as senhas coincidem.
+    // Após a validação com sucesso, transita para a tela de análise:
     secaoCadastro.style.display = 'none';
     secaoSucesso.style.display = 'block';
 });
 
-// 6. BotÃ£o para voltar ao inÃ­cio a partir da tela de sucesso
+// 6. Botão para voltar ao início a partir da tela de sucesso
 document.querySelector('#btn-voltar-inicio').addEventListener('click', () => {
     location.reload();
 });
 
-// 7. OperaÃ§Ãµes BancÃ¡rias (EspaÃ§o reservado para as prÃ³ximas aulas / API)
+// 7. Operações Bancárias (Espaço reservado para as próximas aulas / API)
 document.querySelector('#btn-depositar').addEventListener('click', () => { });
 document.querySelector('#btn-sacar').addEventListener('click', () => { });
 document.querySelector('#btn-transferir').addEventListener('click', () => { });
